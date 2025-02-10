@@ -13,7 +13,7 @@ The **Andishi Talent Web Application** built using:
 ### 1 Clone the Repository
 
 ```
-git clone https://github.com/your-username/andishi-talent.git
+git clone https://github.com/Andishi-dev/andishi-talent.git
 cd andishi-talent
 ```
 
