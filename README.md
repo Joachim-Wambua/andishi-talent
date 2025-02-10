@@ -1,6 +1,6 @@
 # ANDISHI-TALENT
 
-A **full-stack web application** with an integrated **Learning Management System (LMS)** built using:
+The **Andishi Talent Web Application** built using:
 
 - **Frontend:** [Next.js](https://nextjs.org/) with [Tailwind CSS](https://tailwindcss.com/)
 - **Backend:** [Node.js](https://nodejs.org/) with [Express.js](https://expressjs.com/)
