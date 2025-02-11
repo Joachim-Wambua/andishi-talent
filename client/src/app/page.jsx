@@ -6,7 +6,7 @@ export default function Home() {
   const [year, setYear] = useState(() => new Date().getFullYear());
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#001014] text-gray-900 dark:text-white px-6">
       <Image
         src="/andishi-logo.png" // Replace with an actual under-construction icon/image
         alt="Under Construction"
