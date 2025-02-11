@@ -1,35 +1,38 @@
 "use client";
-import Image from "next/image";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
+import Navbar from "./(home)/Navbar";
+import Hero from "./(home)/Hero";
+import MissionStatement from "./(home)/MissionStatement";
+import Footer from "./(home)/Footer";
+import CourseCarousel from "./(home)/CourseCarousel";
+import ValueProposition from "./(home)/ValueProposition";
 
 export default function Home() {
-  const [year, setYear] = useState(() => new Date().getFullYear());
+  const [year] = useState(() => new Date().getFullYear());
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#001014] text-gray-900 dark:text-white px-6">
-      <Image
-        src="/andishi-logo.png" // Replace with an actual under-construction icon/image
-        alt="Under Construction"
-        width={150}
-        height={150}
-        className="mb-6"
-      />
+    <div className="min-h-screen flex flex-col bg-[#001014] text-white">
+      {/* Navigation Bar */}
+      <Navbar />
 
-      <h1 className="text-3xl sm:text-4xl font-bold text-center">
-        🚧 We're Under Construction 🚧
-      </h1>
+      {/* Main Content */}
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <Hero />
 
-      <p className="text-lg text-center mt-2">
-        Something exciting is coming soon! Stay tuned.
-      </p>
+        {/* Mission Statement */}
+        <MissionStatement />
 
-      <div className="mt-6">
-        <div className="w-10 h-10 border-4 border-dashed border-gray-500 rounded-full animate-spin"></div>
-      </div>
+        {/* Course Carousel */}
+        <CourseCarousel />
 
-      <footer className="absolute bottom-6 text-sm text-gray-600 dark:text-gray-400">
-        &copy; {year} Andishi Talent. All rights reserved.
-      </footer>
+        {/* Why Us */}
+        <ValueProposition />
+      </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
