@@ -7,7 +7,7 @@ import Image from "next/image";
 const GraduatesLogos = () => {
   return (
     <section className="w-full py-12 bg-white">
-      <h2 className="text-center text-2xl font-semibold text-gray-900 mb-10">
+      <h2 className="text-center text-3xl font-semibold text-gray-900 mb-10">
         Where Our Graduates Work
       </h2>
 

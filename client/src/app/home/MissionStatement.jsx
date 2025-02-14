@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function MissionStatement() {
   return (
     <section className="py-16 px-12 bg-white  w-full">
-      <h2 className="text-4xl font-semibold text-center text-[#0D1216] mb-4">
+      <h2 className="text-3xl font-semibold text-center text-[#0D1216] mb-4">
         Our Mission Statement
       </h2>
       <div className="w-full flex lg:flex-row-reverse sm:flex-col my-8">

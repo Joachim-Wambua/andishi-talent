@@ -38,9 +38,9 @@ export default function TestimonialCarousel() {
 
   return (
     <section className="w-full bg-white py-12">
-      <div className="text-[#0D1216] text-center">
-        <h2 className="text-4xl font-semibold">What Our Students Say</h2>
-        <p className="text-[16px] font-nunito my-6">
+      <div className="text-center">
+        <h2 className="text-4xl text-[#0D1216] font-semibold">What Our Students Say</h2>
+        <p className="text-[16px] text-[#314453] font-nunito my-6">
           Hear from our graduates who have successfully transitioned into tech careers.
         </p>
       </div>

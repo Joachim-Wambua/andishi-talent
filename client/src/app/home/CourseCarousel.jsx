@@ -5,11 +5,11 @@ import { courses } from "@/constants";
 export default function CourseGrid() {
   return (
     <section className="w-full bg-white py-12">
-      <div className="text-black text-center px-4">
-        <h2 className="text-3xl sm:text-4xl font-semibold">
+      <div className="text-center px-4">
+        <h2 className="text-3xl text-[#0D1216] sm:text-4xl font-semibold">
           Explore Our Courses
         </h2>
-        <p className="text-[16px] font-nunito my-6">
+        <p className="text-[16px] text-[#314453] font-nunito my-6">
           Choose from a variety of courses designed to help you succeed in the
           tech industry.
         </p>
@@ -47,7 +47,7 @@ export default function CourseGrid() {
 
         {/* Centered View All Courses Button */}
         <div className="flex justify-center mt-8">
-          <button className="bg-[#21B1E6] hover:bg-blue-800 text-white font-bold text-[16px] px-8 py-4 rounded-full transition">
+          <button className="bg-[#21B1E6] hover:bg-blue-800 text-[#0D1216] font-bold text-[16px] px-8 py-4 rounded-full transition">
             View All Courses
           </button>
         </div>

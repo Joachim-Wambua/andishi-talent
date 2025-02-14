@@ -7,7 +7,7 @@ export default function ValueProposition() {
         <h2 className="text-[32px] mb-4 font-semibold text-[#0D1216]">
           Why Join Andishi Academy
         </h2>
-        <p className="text-[#0D1216] mt-2 font-nunito text-[16px]">
+        <p className="text-[#314453] mt-2 font-nunito text-[16px]">
           Gain product skills, work on real-world projects, and stay ahead in tech. 
           Master the latest tools and trends to build a successful career.
         </p>
