@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hero = () => {
+const Hero = ({ header, description }) => {
   return (
     <section
       className="relative bg-cover bg-center h-[500px] flex items-center justify-center text-white"
@@ -9,15 +9,14 @@ const Hero = () => {
           "url('https://res.cloudinary.com/dltjv8zbh/image/upload/v1739271045/img-homepage_r5k2wp.jpg')",
       }}
     >
-      <div className="text-center">
-        <h1 className="text-5xl font-bold">
-          Transform Your Future with Practical Tech Skills
-        </h1>
-        <p className="mt-4 text-xl">
-          Learn from industry experts, work on real-world projects, and build
-          skills that matter.<br></br> Join a thriving community of innovators and problem-solvers
-        </p>
-        <button className="my-4 bg-blue-500 hover:bg-blue-800 hover:text-white font-bold text-black px-6 py-4 rounded-full">
+      <div className="text-center w-2/3">
+        <div className="flex flex-col items-center" >
+          <h1 className="text-5xl secondary-text font-bold">{header}</h1>
+          <p className="mt-4 w-2/3 secondary-text font-medium text-[18px]">
+            {description}
+          </p>
+        </div>
+        <button className="my-4 bg-[#21B1E6] hover:bg-blue-800 hover:text-white font-bold text-black px-6 py-4 rounded-full transition">
           Apply Now
         </button>
       </div>

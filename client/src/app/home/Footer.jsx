@@ -11,27 +11,27 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#e8f7fc] text-gray-800 py-12 px-6">
+    <footer className="bg-[#e8f7fc]  py-12 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-5 md:grid-cols-4 gap-4">
         {/* Newsletter Section */}
         <div className="col-span-2 mr-4">
-          <h3 className="text-xl font-semibold mb-4">
+          <h3 className="text-xl text-[#0D1216] font-semibold mb-4">
             Subscribe to our newsletter
           </h3>
           <div className="flex flex-col space-y-3">
             <input
               type="email"
               placeholder="Email Address"
-              className="w-full px-4 py-2 border rounded-lg"
+              className="w-full px-4 py-2 border rounded-lg border-gray-500 text-[#0D1216] font-bold font-nunito bg-transparent"
             />
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 my-4">
               <input type="checkbox" id="consent" className="w-4 h-4" />
-              <label htmlFor="consent" className="text-sm">
+              <label htmlFor="consent" className="text-[13px] font-nunito">
                 By entering your email you agree to receive the Andishi Academy
                 newsletter
               </label>
             </div>
-            <button className="bg-blue-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-600">
+            <button className="bg-[#21B1E6] w-1/3 px-6 py-4 rounded-full text-[#0D1216] font-bold hover:bg-blue-600 hover:text-white transition">
               Subscribe
             </button>
           </div>
@@ -39,9 +39,9 @@ export default function Footer() {
     
 
         {/* Menu Links */}
-        <div className="col-start-3">
-          <h3 className="text-lg font-semibold mb-3">Menu</h3>
-          <ul className="space-y-2">
+        <div className="col-start-3 font-nunito">
+          <h3 className="text-lg text-[#0D1216] font-semibold mb-3">Menu</h3>
+          <ul className="space-y-2 text-[#314453]">
             <li>
               <a href="#" className="hover:underline">
                 Home
@@ -71,9 +71,9 @@ export default function Footer() {
         </div>
 
         {/* Company Links */}
-        <div className="col-start-4">
-          <h3 className="text-lg font-semibold mb-3">Company</h3>
-          <ul className="space-y-2">
+        <div className="col-start-4 font-nunito">
+          <h3 className="text-lg text-[#0D1216] font-semibold mb-3">Company</h3>
+          <ul className="space-y-2 text-[#314453]">
             <li>
               <a href="#" className="hover:underline">
                 About
@@ -113,9 +113,9 @@ export default function Footer() {
         </div>
 
         {/* Social Media Links */}
-        <div className="col-start-5">
-          <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
-          <div className="flex flex-col space-y-3">
+        <div className="col-start-5 font-nunito">
+          <h3 className="text-lg text-[#0D1216] font-semibold mb-3">Follow Us</h3>
+          <div className="flex flex-col space-y-3 text-[#314453] text-[16px]">
             <a href="#" className="flex items-center space-x-2 hover:underline">
               <FaFacebook className="text-blue-600" /> <span>Facebook</span>
             </a>
@@ -136,10 +136,10 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="mt-8 border-t pt-6 flex justify-between items-center">
+      <div className="mt-8 border-t pt-6 flex justify-between items-center font-nunito">
         <Image src="/andishi-logo.png" alt="Andishi Academy Logo" className="rounded-full" width={45} height={45} />
         <p className="text-sm">
-          &copy; {new Date().getFullYear()} Andishi Academy | All Rights
+          Copyright &copy; {new Date().getFullYear()} Andishi Academy | All Rights
           Reserved
         </p>
       </div>

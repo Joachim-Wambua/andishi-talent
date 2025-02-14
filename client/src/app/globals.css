@@ -5,13 +5,24 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-primary: var(--font-montserrat);
+  --font-primary: "Nunito", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
 }
 
 body {
-  font-family: var(--font-primary), sans-serif;
+  font-family: var(--font-primary);
   color: var(--foreground);
   background: var(--background);
+}
+
+
+/* Example usage for Montserrat */
+.font-nunito {
+  font-family: var(--font-primary);
+}
+
+.font-montserrat {
+  font-family: var(--font-secondary);
 }
 
 @media (prefers-color-scheme: dark) {
