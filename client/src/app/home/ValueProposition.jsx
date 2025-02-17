@@ -2,7 +2,7 @@ import { whyJoinAndishi } from "@/constants";
 
 export default function ValueProposition() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-radial-gradient">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-[32px] mb-4 font-semibold text-[#0D1216]">
           Why Join Andishi Academy

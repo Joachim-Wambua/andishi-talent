@@ -23,16 +23,17 @@ export default function Homepage() {
           header="Transform Your Future with Practical Tech Skills"
           description="Learn from industry experts, work on real-world projects, and build
           skills that matter. Join a thriving community of innovators and problem-solvers"
+          buttonText="Apply Now"
         />
 
         {/* Mission Statement */}
         <MissionStatement />
 
-        {/* Why Us */}
-        <ValueProposition />
-
         {/* Course Carousel */}
         <CourseCarousel />
+
+        {/* Why Us */}
+        <ValueProposition />
 
         {/* Testimonials */}
         <TestimonialCarousel />

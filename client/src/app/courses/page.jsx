@@ -2,6 +2,10 @@ import React from "react";
 import Navbar from "../home/Navbar";
 import Hero from "../home/Hero";
 import Footer from "../home/Footer";
+import IntroductoryCourses from "./components/IntroductoryCourses";
+import CoreCourses from "./components/CoreCourses";
+import SpecializedCourses from "./components/SpecializedCourses";
+import ProgramStructure from "./components/ProgramStructure";
 
 const Courses = () => {
   return (
@@ -9,12 +13,14 @@ const Courses = () => {
       <div className="text-black">
         <Navbar />
         <Hero
-          header="Courses"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac justo
-          velit. Sed non lectus auctor, dictum ipsum vitae, pharetra dui.
-          Aliquam erat volutpat. Donec ullamcorper libero at urna feugiat, ac
-          consectetur tellus tristique."
+          header="Master Technical Skills with a Wide Range of In-Depth Courses"
+          description="From foundational programming to advanced specializations, our courses are designed to make you job-ready."
+          buttonText = "Explore Courses"
         />
+        <IntroductoryCourses />
+        <CoreCourses />
+        <SpecializedCourses />
+        <ProgramStructure />
         <Footer />
       </div>
     </section>

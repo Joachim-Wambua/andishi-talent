@@ -1,27 +1,28 @@
-"use client";
+import React from "react";
+import { IntroCourses } from "@/constants";
 
-import { courses } from "@/constants";
-
-export default function CourseGrid() {
+const IntroductoryCourses = () => {
   return (
-    <section className="w-full bg-white py-12">
+    <section className="bg-white w-full py-12">
       <div className="text-center px-4">
         <h2 className="text-3xl text-[#0D1216] sm:text-4xl font-semibold">
-          Explore Our Courses
+          Introductory Courses
         </h2>
-        <p className="text-[16px] text-[#314453] font-nunito my-6">
-          Choose from a variety of courses designed to help you succeed in the
-          tech industry.
+        <h3 className="text-2xl py-4 text-[#314453] font-semibold">
+          Start Your Journey with Our Introductory Courses
+        </h3>
+        <p className="text-[16px] text-[#314453] font-nunito my-2">
+          Build a strong foundation with beginner-friendly courses designed to
+          introduce you to programming and design
         </p>
       </div>
 
-      {/* Responsive Grid */}
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {courses.map((course) => (
+      <div className="max-w-6xl mx-auto my-8 px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {IntroCourses.map((course) => (
             <div
               key={course.id}
-              className="bg-white border rounded-lg overflow-hidden shadow-lg"
+              className="bg-white border rounded-lg overflow-hidden border-[#C2D0DB]"
             >
               <img
                 src={course.image}
@@ -44,14 +45,9 @@ export default function CourseGrid() {
             </div>
           ))}
         </div>
-
-        {/* Centered View All Courses Button */}
-        <div className="flex justify-center mt-8">
-          <button className="bg-[#21B1E6] hover:bg-blue-800 text-[#0D1216] hover:text-white font-bold text-[16px] px-8 py-4 rounded-full transition">
-            View All Courses
-          </button>
-        </div>
       </div>
     </section>
   );
-}
+};
+
+export default IntroductoryCourses;

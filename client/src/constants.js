@@ -126,3 +126,74 @@ export const logos = [
     alt: "Mastercard",
   },
 ];
+
+export const IntroCourses = [
+  {
+    id: 1,
+    title: "Programming Foundations",
+    description:
+      "Learn core programming concepts in python and TypeScript . Hands on practice with real world examples.",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798783/Pixabay-4394633_d0cs8e.png",
+  },
+  {
+    id: 2,
+    title: "Foundation in UI/UX Design",
+    description:
+      "Master the fundamentals of intuitive design with Figma and Adobe XD. Create visually appealing and user-friendly interfaces.",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798783/unsplash_jJT2r2n7lYA_y1htxc.png",
+  },
+];
+
+export const Core = [
+  {
+    id: 1,
+    title: "Full Stack Web Development",
+    description:
+      "Frontend: HTML, CSS, JavaScript/TypeScript, React, Tailwind CSS.\nBackend: Node.js, Next.js, MongoDB.",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798783/Pixabay-4394633_d0cs8e.png",
+  },
+  {
+    id: 2,
+    title: "Database Administration & Management",
+    description:
+      "Learn relational (MySQL) and non-relational (MongoDB) databases.\nFocus on optimization and security.",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798783/Pixabay-4394633_d0cs8e.png",
+  },
+  {
+    id: 3,
+    title: "Enterprise Application Development",
+    description: "Build scalable applications with .NET and Spring Boot.",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798783/unsplash_jJT2r2n7lYA_y1htxc.png",
+  },
+];
+
+export const Specialization = [
+  {
+    id: 1,
+    title: "Mobile Application Development",
+    description:
+      "Build native and cross-platform apps with Flutter and React Native.",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798783/Pixabay-4394633_d0cs8e.png",
+  },
+  {
+    id: 2,
+    title: "DevOps & Cloud Computing",
+    description:
+      "Learn Docker, Kubernetes, and AWS for continuous deployment.Cybersecurity for Developers",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798783/Pixabay-4394633_d0cs8e.png",
+  },
+  {
+    id: 3,
+    title: "Cybersecurity for Developers",
+    description: "Understand secure coding practices and ethical hacking.",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798783/unsplash_jJT2r2n7lYA_y1htxc.png",
+  },
+];

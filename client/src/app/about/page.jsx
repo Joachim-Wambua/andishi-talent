@@ -1,16 +1,25 @@
-import React from 'react'
-import Navbar from '../home/Navbar'
+import React from "react";
+import Navbar from "../home/Navbar";
+import Hero from "../home/Hero";
+import MissionStatement from "../home/MissionStatement";
+import Footer from "../home/Footer";
 
 const About = () => {
   return (
-    <section className='bg-white h-screen w-full'>
+    <section className="min-h-screen flex flex-col bg-white ">
       <div className="text-black">
         <Navbar />
-        <h2 className=''>About</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac justo velit. Sed non lectus auctor, dictum ipsum vitae, pharetra dui. Aliquam erat volutpat. Donec ullamcorper libero at urna feugiat, ac consectetur tellus tristique.</p>
+        <Hero
+          header="Empowering the Future of Tech"
+          description="At Andishi Academy, we strive to be a leading hub for transformative tech education, equipping individuals with practical skills, hands-on experience, and expert mentorship to shape the future of technology."
+          buttonText="Join Us"
+          // imgURL="https://res.cloudinary.com/dltjv8zbh/image/upload/v1739530001/Mission_Statement_cmhoii.png"
+        />
+        <MissionStatement />
+        <Footer />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

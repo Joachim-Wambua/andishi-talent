@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hero = ({ header, description }) => {
+const Hero = ({ header, description, buttonText }) => {
   return (
     <section
       className="relative bg-cover bg-center h-[500px] flex items-center justify-center text-white"
@@ -10,14 +10,14 @@ const Hero = ({ header, description }) => {
       }}
     >
       <div className="text-center w-2/3">
-        <div className="flex flex-col items-center" >
+        <div className="flex flex-col items-center">
           <h1 className="text-5xl secondary-text font-bold">{header}</h1>
           <p className="mt-4 w-2/3 secondary-text font-medium text-[18px]">
             {description}
           </p>
         </div>
         <button className="my-4 bg-[#21B1E6] hover:bg-blue-800 hover:text-white font-bold text-black px-6 py-4 rounded-full transition">
-          Apply Now
+          {buttonText}
         </button>
       </div>
     </section>

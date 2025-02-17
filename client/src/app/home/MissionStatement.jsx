@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function MissionStatement() {
   return (
-    <section className="py-16 px-12 bg-white  w-full">
+    <section className="py-16 px-12 bg-radial-gradient w-full">
       <h2 className="text-3xl font-semibold text-center text-[#0D1216] mb-4">
         Our Mission Statement
       </h2>
@@ -30,7 +30,7 @@ export default function MissionStatement() {
 
           <div className="w-3/4 whitespace-nowrap">
             <button className=" w-2/3 my-4 bg-[#21B1E6] transition hover:bg-blue-800 hover:text-white font-bold font-montserrat text-[15px] text-[#0D1216] px-6 py-4 rounded-full">
-              Explore More Courses
+              Explore Our Courses
             </button>
           </div>
         </div>
