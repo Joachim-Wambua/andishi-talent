@@ -197,3 +197,117 @@ export const Specialization = [
       "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798783/unsplash_jJT2r2n7lYA_y1htxc.png",
   },
 ];
+
+export const TechMentors = [
+  {
+    id: 1,
+    name: "John Carter",
+    role: "Software Developer",
+    email: "johncarter@gmail.com",
+    phone: "+2541234567",
+    website: "johncarter.com",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739882734/Pixabay-6874910_w5de5u.png",
+  },
+
+  {
+    id: 2,
+    name: "John Carter",
+    role: "Software Developer",
+    email: "johncarter@gmail.com",
+    phone: "+2541234567",
+    website: "johncarter.com",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739882734/Pixabay-668398_qxwdym.png",
+  },
+
+  {
+    id: 3,
+    name: "John Carter",
+    role: "Software Developer",
+    email: "johncarter@gmail.com",
+    phone: "+2541234567",
+    website: "johncarter.com",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739882735/unsplash_nLxOjC5d_0Y_jkotfh.png",
+  },
+];
+
+export const ValuesList = [
+  {
+    id: 1,
+    title: "Practical Learning",
+    description:
+      "We focus on hands-on training to ensure students gain real-world skills.",
+  },
+  {
+    id: 2,
+    title: "Mentorship & Support",
+    description:
+      "Our experts guide and support students throughout their learning journey.",
+  },
+  {
+    id: 3,
+    title: "Career Readiness",
+    description:
+      "We prepare learners for tech careers through industry-aligned courses and job placement support.",
+  },
+];
+
+export const EventsList = [
+  {
+    id: 1,
+    title: "Talk with Experts in Cyber Security ",
+    date: "11 June 2025",
+    location: "Zoom Webinar",
+    time: "3:30pm - 5:30pm",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885533/Pixabay-4795762_datmsc.png",
+  },
+  {
+    id: 2,
+    title: "Webinar on Docker and Kubernetes",
+    date: "12 June 2025",
+    location: "Zoom Webinar",
+    time: "4:00pm - 6:00pm",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885534/unsplash_IgUR1iX0mqM_vgf1ye.png",
+  },
+  {
+    id: 3,
+    title: "React Native for Mobile Development",
+    date: "13 June 2025",
+    location: "Zoom Webinar",
+    time: "5:00pm - 7:00pm",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885534/Pixabay-3155972_wro0sd.png",
+  },
+];
+
+export const faqData = [
+  {
+    id: 1,
+    question: "Who can study at Andishi?",
+    answer:
+      "Andishi Academy welcomes learners of all levels, from beginners exploring tech for the first time to professionals looking to advance their skills.",
+  },
+  {
+    id: 2,
+    question: "Do you offer remote learning courses?",
+    answer:
+      "Yes, we offer fully remote and flexible courses that fit your schedule.",
+  },
+  {
+    id: 3,
+    question:
+      "What is the price difference between foundation courses, core courses, and specialized courses?",
+    answer:
+      "The prices vary depending on course depth and specialization. Visit our pricing page for details.",
+  },
+  {
+    id: 4,
+    question: "Will I get a job after the completion of the program?",
+    answer:
+      "While we cannot guarantee a job, we provide career support, mentorship, and networking opportunities to help you land a job.",
+  },
+];

@@ -31,7 +31,7 @@ export default function Footer() {
                 newsletter
               </label>
             </div>
-            <button className="bg-[#21B1E6] w-1/3 px-6 py-4 rounded-full text-[#0D1216] font-bold hover:bg-blue-600 hover:text-white transition">
+            <button className="bg-[#21B1E6] lg:w-1/3 px-6 py-4 rounded-full text-[#0D1216] font-bold hover:bg-blue-600 hover:text-white transition">
               Subscribe
             </button>
           </div>

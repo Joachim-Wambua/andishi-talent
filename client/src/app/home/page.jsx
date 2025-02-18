@@ -42,7 +42,12 @@ export default function Homepage() {
         <GraduatesLogos />
 
         {/* Call to Action */}
-        <CallToAction />
+        <CallToAction
+          title="Join Us"
+          description="Build Your Tech Skills, Shape Your Future, and Secure Your Career in
+          Tech. Master a new tech skill and open doors to endless opportunities"
+          buttonText="Get Started"
+        />
       </main>
 
       {/* Footer */}
