@@ -311,3 +311,60 @@ export const faqData = [
       "While we cannot guarantee a job, we provide career support, mentorship, and networking opportunities to help you land a job.",
   },
 ];
+
+export const PastEventsList = [
+  {
+    id: 1,
+    title: "Talk with Experts in Cyber Security ",
+    date: "11 June 2025",
+    location: "Zoom Webinar",
+    time: "3:30pm - 5:30pm",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885533/Pixabay-4795762_datmsc.png",
+  },
+  {
+    id: 2,
+    title: "Webinar on Docker and Kubernetes",
+    date: "12 June 2025",
+    location: "Zoom Webinar",
+    time: "4:00pm - 6:00pm",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885534/unsplash_IgUR1iX0mqM_vgf1ye.png",
+  },
+  {
+    id: 3,
+    title: "React Native for Mobile Development",
+    date: "13 June 2025",
+    location: "Zoom Webinar",
+    time: "5:00pm - 7:00pm",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885534/Pixabay-3155972_wro0sd.png",
+  },
+  {
+    id: 4,
+    title: "Talk with Experts in Cyber Security ",
+    date: "11 June 2025",
+    location: "Zoom Webinar",
+    time: "3:30pm - 5:30pm",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885533/Pixabay-4795762_datmsc.png",
+  },
+  {
+    id: 5,
+    title: "Webinar on Docker and Kubernetes",
+    date: "12 June 2025",
+    location: "Zoom Webinar",
+    time: "4:00pm - 6:00pm",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885534/unsplash_IgUR1iX0mqM_vgf1ye.png",
+  },
+  {
+    id: 6,
+    title: "React Native for Mobile Development",
+    date: "13 June 2025",
+    location: "Zoom Webinar",
+    time: "5:00pm - 7:00pm",
+    image:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885534/Pixabay-3155972_wro0sd.png",
+  },
+];

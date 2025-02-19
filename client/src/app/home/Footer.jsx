@@ -26,7 +26,7 @@ export default function Footer() {
             />
             <div className="flex items-center space-x-2 my-4">
               <input type="checkbox" id="consent" className="w-4 h-4" />
-              <label htmlFor="consent" className="text-[13px] font-nunito">
+              <label htmlFor="consent" className="text-[13px] text-[#0D1216] font-nunito">
                 By entering your email you agree to receive the Andishi Academy
                 newsletter
               </label>
@@ -138,7 +138,7 @@ export default function Footer() {
       {/* Footer Bottom */}
       <div className="mt-8 border-t pt-6 flex justify-between items-center font-nunito">
         <Image src="/andishi-logo.png" alt="Andishi Academy Logo" className="rounded-full" width={45} height={45} />
-        <p className="text-sm">
+        <p className="text-sm text-[#0D1216]">
           Copyright &copy; {new Date().getFullYear()} Andishi Academy | All Rights
           Reserved
         </p>

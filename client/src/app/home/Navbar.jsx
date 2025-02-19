@@ -8,7 +8,7 @@ import { FaRegUser } from "react-icons/fa6";
 
 export default function Navbar() {
   return (
-    <nav className="bg-white text-black font-semibold h-16 shadow-md py-4 px-6 flex justify-between items-center">
+    <nav className="bg-white sticky top-0 z-10 text-black font-semibold h-16 shadow-md py-4 px-6 flex justify-between items-center">
       <div className="text-2xl">
         <Link href="/" className="">
           <Image
