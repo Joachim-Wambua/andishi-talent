@@ -1,6 +1,6 @@
 import React from "react";
 
-const CourseInfo = () => {
+const EventInfo = () => {
   return (
     <section className="bg-white flex flex-col justify-center items-center w-full py-12">
       <div className="flex w-3/4 rounded-xl my-8 p-8 bg-[#E2E9EE] bg-opacity-50">
@@ -31,4 +31,4 @@ const CourseInfo = () => {
   );
 };
 
-export default CourseInfo;
+export default EventInfo;

@@ -5,7 +5,8 @@ import { notFound } from "next/navigation";
 import Navbar from "@/app/home/Navbar";
 import Footer from "@/app/home/Footer";
 import EventDetailHero from "./components/EventDetailHero";
-import CourseInfo from "./components/CourseInfo";
+import EventInfo from "./components/EventInfo";
+import EventRegistration from "./components/EventRegistration";
 
 const EventDetails = ({ params }) => {
   const { id } = params;
@@ -15,7 +16,7 @@ const EventDetails = ({ params }) => {
   const event = allEvents.find((event) => event.id.toString() === id);
 
   if (!event) {
-    return notFound(); // Show 404 if event not found
+    return notFound();
   }
   return (
     <section className="bg-white w-full min-h-screen">
@@ -26,8 +27,13 @@ const EventDetails = ({ params }) => {
         date={event.date}
         time={event.time}
       />
-      <CourseInfo />
-      
+      <EventRegistration
+        title={event.title}
+        imgURL={event.image}
+        date={event.date}
+        time={event.time}
+      />
+      <EventInfo />
       <Footer />
     </section>
   );
