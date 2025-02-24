@@ -2,8 +2,8 @@
 import React from "react";
 import { EventsList, PastEventsList } from "@/constants";
 import { notFound } from "next/navigation";
-import Navbar from "@/app/home/Navbar";
-import Footer from "@/app/home/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import EventDetailHero from "./components/EventDetailHero";
 import EventInfo from "./components/EventInfo";
 import EventRegistration from "./components/EventRegistration";

@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../home/Navbar";
-import Hero from "../home/Hero";
-import Footer from "../home/Footer";
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero";
+import Footer from "../../components/Footer";
 import IntroductoryCourses from "./components/IntroductoryCourses";
 import CoreCourses from "./components/CoreCourses";
 import SpecializedCourses from "./components/SpecializedCourses";
@@ -15,7 +15,7 @@ const Courses = () => {
         <Hero
           header="Master Technical Skills with a Wide Range of In-Depth Courses"
           description="From foundational programming to advanced specializations, our courses are designed to make you job-ready."
-          buttonText = "Explore Courses"
+          buttonText="Explore Courses"
         />
         <IntroductoryCourses />
         <CoreCourses />

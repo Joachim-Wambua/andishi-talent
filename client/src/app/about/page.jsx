@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "../home/Navbar";
-import Hero from "../home/Hero";
-import MissionStatement from "../home/MissionStatement";
-import Footer from "../home/Footer";
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero";
+import MissionStatement from "../home/components/MissionStatement";
+import Footer from "../../components/Footer";
 import AboutAndishi from "./components/AboutAndishi";
 import Mentors from "./components/Mentors";
 import Values from "./components/Values";
 import Events from "./components/Events";
-import CallToAction from "../home/CallToAction";
+import CallToAction from "../home/components/CallToAction";
 import FAQ from "./components/FAQ";
 
 const About = () => {

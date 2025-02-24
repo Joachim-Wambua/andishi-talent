@@ -1,14 +1,14 @@
 "use client";
 
-import Navbar from "./Navbar";
-import Hero from "./Hero";
-import MissionStatement from "./MissionStatement";
-import Footer from "./Footer";
-import CourseCarousel from "./CourseCarousel";
-import ValueProposition from "./ValueProposition";
-import TestimonialCarousel from "./TestimonialCarousel";
-import GraduatesLogos from "./GraduatesLogos";
-import CallToAction from "./CallToAction";
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero";
+import MissionStatement from "./components/MissionStatement";
+import Footer from "../../components/Footer";
+import CourseCarousel from "./components/CourseCarousel";
+import ValueProposition from "./components/ValueProposition";
+import TestimonialCarousel from "./components/TestimonialCarousel";
+import GraduatesLogos from "./components/GraduatesLogos";
+import CallToAction from "./components/CallToAction";
 
 export default function Homepage() {
   return (

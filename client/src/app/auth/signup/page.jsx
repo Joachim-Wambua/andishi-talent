@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const LogIn = () => {
+const SignUp = () => {
   return (
     <section className="flex min-h-screen items-center justify-center bg-gray-100 p-4">
       {/* Container */}
@@ -16,7 +16,7 @@ const LogIn = () => {
               layout="intrinsic"
               width={350}
               height={350}
-              className="absolute z-10 opacity-90" // Ensures it's above gradient but below glass
+              className="absolute z-10 opacity-90"
             />
           </div>
 
@@ -25,8 +25,8 @@ const LogIn = () => {
             style={{ backdropFilter: "blur(10px)" }}
           >
             <h2 className="text-2xl font-semibold text-white px-6 pt-2">
-              Learn, Build, Launch - Gain Practical Skills, Work on Real
-              Projects, and Master the Latest Tech
+              Join Us Today - Unlock Opportunities, Build Your Network, and
+              Learn New Skills
             </h2>
             <div className="absolute bottom-0 right-0">
               <Image
@@ -39,7 +39,7 @@ const LogIn = () => {
           </div>
         </div>
 
-        {/* Right Section - Login Form */}
+        {/* Right Section - Sign Up Form */}
         <div className="w-full md:w-1/2 p-10 ">
           <div className="text-center ">
             <Image
@@ -50,17 +50,51 @@ const LogIn = () => {
               className="mx-auto rounded-full"
             />
             <h2 className="text-xl font-semibold text-[#0D1216] mt-2">
-              Welcome To Andishi
+              Create Your Andishi Account
             </h2>
           </div>
 
           <form className="mt-6 space-y-4 font-nunito">
+            <div className="flex gap-4">
+              <div className="flex-1">
+                <label className="block text-gray-700 text-[12px]">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                  placeholder="Enter First Name"
+                />
+              </div>
+              <div className="flex-1">
+                <label className="block text-gray-700 text-[12px]">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                  placeholder="Enter Last Name"
+                />
+              </div>
+            </div>
             <div>
-              <label className="block text-gray-700 text-[12px]">Login</label>
+              <label className="block text-gray-700 text-[12px]">
+                Email Address
+              </label>
               <input
                 type="email"
                 className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
-                placeholder="Email or Phone Number"
+                placeholder="Enter Email"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 text-[12px]">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                placeholder="Enter Phone Number"
               />
             </div>
             <div>
@@ -69,23 +103,22 @@ const LogIn = () => {
               </label>
               <input
                 type="password"
-                className="w-full px-4 py-2 border bg-[#E2E9EE] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
-                placeholder="Enter Password"
+                className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                placeholder="Create Password"
               />
             </div>
-            <div className="flex items-center justify-between text-sm">
-              <div className="flex">
-                <input type="checkbox" id="remember" className="mr-1" />
-                <label htmlFor="remember" className="text-gray-700 text-[12px]">
-                  Remember me
-                </label>
-              </div>
-              <a href="#" className="text-[#21B1E6] text-[12px]">
-                Forgot password?
-              </a>
+            <div>
+              <label className="block text-gray-700 text-[12px]">
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                placeholder="Confirm Password"
+              />
             </div>
             <button className="w-full bg-[#21B1E6] hover:bg-blue-800 text-[#0D1216] hover:text-white font-bold text-[16px] px-8 py-4 rounded-full transition">
-              Sign In
+              Sign Up
             </button>
           </form>
 
@@ -97,12 +130,12 @@ const LogIn = () => {
                 width={20}
                 height={20}
               />
-              <span className="font-nunito ">Or Sign in with Google</span>
+              <span className="font-nunito ">Sign up with Google</span>
             </button>
             <p className="mt-4 text-[12px] text-[#0D1216]">
-              Don't have an account?{" "}
-              <a href="/auth/signup" className="font-semibold text-[#21B1E6]">
-                Create account
+              Already have an account?{" "}
+              <a href="/auth/login" className="font-semibold text-[#21B1E6]">
+                Sign In
               </a>
             </p>
           </div>
@@ -112,4 +145,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default SignUp;
