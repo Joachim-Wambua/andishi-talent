@@ -368,3 +368,54 @@ export const PastEventsList = [
       "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885534/Pixabay-3155972_wro0sd.png",
   },
 ];
+
+export const articles = [
+  {
+    id: 1,
+    title: "Mastering the Art of Clean Code: Best Practices for Programmers",
+    author: "Joanna Wellick",
+    date: "June 28, 2018",
+    shares: "1K shares",
+    description:
+      "Mastering Clean Code involves following best practices like meaningful naming, consistent formatting, modularity, and proper documentation to write efficient, maintainable, and readable code.",
+    imageUrl:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885533/Pixabay-4795762_datmsc.png",
+    readTime: "15 Min Read",
+  },
+  {
+    id: 2,
+    title: "Mastering the Art of Clean Code: Best Practices for Programmers",
+    author: "Joanna Wellick",
+    date: "June 28, 2018",
+    shares: "1K shares",
+    description:
+      "Mastering Clean Code involves following best practices like meaningful naming, consistent formatting, modularity, and proper documentation to write efficient, maintainable, and readable code.",
+    imageUrl:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798787/Pixabay-2953862_aemymn.png",
+    readTime: "15 Min Read",
+  },
+  {
+    id: 3,
+    title: "Mastering the Art of Clean Code: Best Practices for Programmers",
+    author: "Joanna Wellick",
+    date: "June 28, 2018",
+    shares: "1K shares",
+    description:
+      "Mastering Clean Code involves following best practices like meaningful naming, consistent formatting, modularity, and proper documentation to write efficient, maintainable, and readable code.",
+    imageUrl:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739798787/Pixabay-2953862_aemymn.png",
+    readTime: "15 Min Read",
+  },
+  {
+    id: 4,
+    title: "Mastering the Art of Clean Code: Best Practices for Programmers",
+    author: "Joanna Wellick",
+    date: "June 28, 2018",
+    shares: "1K shares",
+    description:
+      "Mastering Clean Code involves following best practices like meaningful naming, consistent formatting, modularity, and proper documentation to write efficient, maintainable, and readable code.",
+    imageUrl:
+      "https://res.cloudinary.com/dltjv8zbh/image/upload/v1739885533/Pixabay-4795762_datmsc.png",
+    readTime: "15 Min Read",
+  },
+];

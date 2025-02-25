@@ -150,7 +150,7 @@ const DarkNavbar = () => {
             Sign In
           </Link>
           <Link
-            href="/auth/login"
+            href="/application-form"
             className="flex items-center secondary-text bg-[#21B1E6] hover:bg-blue-800 hover:text-white transition text-white px-4 py-[6px] rounded-full"
           >
             Apply Now

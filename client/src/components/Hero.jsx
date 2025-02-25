@@ -1,6 +1,7 @@
+import Link from "next/link";
 import React from "react";
 
-const Hero = ({ header, description, buttonText }) => {
+const Hero = ({ header, description, buttonText, buttonLink }) => {
   return (
     <section
       className="relative bg-cover bg-center h-[500px] flex items-center justify-center text-white"
@@ -16,9 +17,11 @@ const Hero = ({ header, description, buttonText }) => {
             {description}
           </p>
         </div>
-        <button className="my-4 bg-[#21B1E6] hover:bg-blue-800 hover:text-white font-bold text-black px-6 py-4 rounded-full transition">
-          {buttonText}
-        </button>
+        <Link href={buttonLink}>
+          <button className="my-4 bg-[#21B1E6] hover:bg-blue-800 hover:text-white font-bold text-black px-6 py-4 rounded-full transition">
+            {buttonText}
+          </button>
+        </Link>
       </div>
     </section>
   );

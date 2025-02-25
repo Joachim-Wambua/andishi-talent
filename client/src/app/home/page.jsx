@@ -24,6 +24,7 @@ export default function Homepage() {
           description="Learn from industry experts, work on real-world projects, and build
           skills that matter. Join a thriving community of innovators and problem-solvers"
           buttonText="Apply Now"
+          buttonLink="/application-form"
         />
 
         {/* Mission Statement */}
