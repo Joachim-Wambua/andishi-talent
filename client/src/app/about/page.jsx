@@ -19,6 +19,7 @@ const About = () => {
           header="Empowering the Future of Tech"
           description="At Andishi Academy, we strive to be a leading hub for transformative tech education, equipping individuals with practical skills, hands-on experience, and expert mentorship to shape the future of technology."
           buttonText="Join Us"
+          buttonLink="/application-form"
           // imgURL="https://res.cloudinary.com/dltjv8zbh/image/upload/v1739530001/Mission_Statement_cmhoii.png"
         />
         <MissionStatement />
