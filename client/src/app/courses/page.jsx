@@ -16,6 +16,7 @@ const Courses = () => {
           header="Master Technical Skills with a Wide Range of In-Depth Courses"
           description="From foundational programming to advanced specializations, our courses are designed to make you job-ready."
           buttonText="Explore Courses"
+          buttonLink="/courses"
         />
         <IntroductoryCourses />
         <CoreCourses />
