@@ -26,7 +26,10 @@ export default function Footer() {
             />
             <div className="flex items-center space-x-2 my-4">
               <input type="checkbox" id="consent" className="w-4 h-4" />
-              <label htmlFor="consent" className="text-[13px] text-[#0D1216] font-nunito">
+              <label
+                htmlFor="consent"
+                className="text-[13px] text-[#0D1216] font-nunito"
+              >
                 By entering your email you agree to receive the Andishi Academy
                 newsletter
               </label>
@@ -36,24 +39,23 @@ export default function Footer() {
             </button>
           </div>
         </div>
-    
 
         {/* Menu Links */}
         <div className="col-start-3 font-nunito">
           <h3 className="text-lg text-[#0D1216] font-semibold mb-3">Menu</h3>
           <ul className="space-y-2 text-[#314453]">
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/" className="hover:underline">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/courses" className="hover:underline">
                 Courses
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/pricing" className="hover:underline">
                 Pricing
               </a>
             </li>
@@ -63,7 +65,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/knowledge-hub" className="hover:underline">
                 Knowledge Hub
               </a>
             </li>
@@ -75,12 +77,12 @@ export default function Footer() {
           <h3 className="text-lg text-[#0D1216] font-semibold mb-3">Company</h3>
           <ul className="space-y-2 text-[#314453]">
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/about" className="hover:underline">
                 About
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/contact" className="hover:underline">
                 Contact Us
               </a>
             </li>
@@ -114,18 +116,32 @@ export default function Footer() {
 
         {/* Social Media Links */}
         <div className="col-start-5 font-nunito">
-          <h3 className="text-lg text-[#0D1216] font-semibold mb-3">Follow Us</h3>
+          <h3 className="text-lg text-[#0D1216] font-semibold mb-3">
+            Follow Us
+          </h3>
           <div className="flex flex-col space-y-3 text-[#314453] text-[16px]">
-            <a href="#" className="flex items-center space-x-2 hover:underline">
+            <a
+              href="https://www.facebook.com/profile.php?id=61571654250679"
+              className="flex items-center space-x-2 hover:underline"
+            >
               <FaFacebook className="text-blue-600" /> <span>Facebook</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 hover:underline">
+            <a
+              href="https://x.com/andishi_academy"
+              className="flex items-center space-x-2 hover:underline"
+            >
               <FaTwitter className="text-black" /> <span>Twitter</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 hover:underline">
+            <a
+              href="https://www.instagram.com/andishi_academy/"
+              className="flex items-center space-x-2 hover:underline"
+            >
               <FaInstagram className="text-pink-500" /> <span>Instagram</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 hover:underline">
+            <a
+              href="https://www.linkedin.com/company/andishi-academy"
+              className="flex items-center space-x-2 hover:underline"
+            >
               <FaLinkedin className="text-blue-700" /> <span>LinkedIn</span>
             </a>
             <a href="#" className="flex items-center space-x-2 hover:underline">
@@ -137,10 +153,16 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className="mt-8 border-t pt-6 flex justify-between items-center font-nunito">
-        <Image src="/andishi-logo.png" alt="Andishi Academy Logo" className="rounded-full" width={45} height={45} />
+        <Image
+          src="/andishi-logo.png"
+          alt="Andishi Academy Logo"
+          className="rounded-full"
+          width={45}
+          height={45}
+        />
         <p className="text-sm text-[#0D1216]">
-          Copyright &copy; {new Date().getFullYear()} Andishi Academy | All Rights
-          Reserved
+          Copyright &copy; {new Date().getFullYear()} Andishi Academy | All
+          Rights Reserved
         </p>
       </div>
     </footer>
