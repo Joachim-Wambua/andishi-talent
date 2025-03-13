@@ -24,13 +24,56 @@ const ApplicationForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/applications/submit-application`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Application Sent Successfully!");
+        setFormData({
+          firstName: "",
+          secondName: "",
+          email: "",
+          dob: "",
+          phone: "",
+          gender: "",
+          location: "",
+          courseInterest: "",
+          skillLevel: "",
+          primaryGoal: "",
+          startDate: "",
+          learningSchedule: "",
+        });
+      } else {
+        alert(`Failed to send Application: ${data.message}`);
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+      console.error("Error submitting application form:", error);
+    }
   };
 
-  const handleNext = () => setCurrentPage(2);
-  const handleBack = () => setCurrentPage(1);
+  const handleNext = (e) => {
+    e.preventDefault();
+    setCurrentPage(2);
+  };
+  const handleBack = (e) => {
+    e.preventDefault();
+    setCurrentPage(1);
+  };
 
   return (
     <section className="min-h-screen flex flex-col items-center w-full bg-white">

@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { EventsList, PastEventsList } from "@/constants";
 import { notFound } from "next/navigation";
@@ -7,6 +6,12 @@ import Footer from "@/components/Footer";
 import EventDetailHero from "./components/EventDetailHero";
 import EventInfo from "./components/EventInfo";
 import EventRegistration from "./components/EventRegistration";
+
+// ✅ Define static paths for export
+export async function generateStaticParams() {
+  const allEvents = [...EventsList, ...PastEventsList];
+  return allEvents.map((event) => ({ id: event.id.toString() }));
+}
 
 const EventDetails = ({ params }) => {
   const { id } = params;
@@ -18,6 +23,7 @@ const EventDetails = ({ params }) => {
   if (!event) {
     return notFound();
   }
+
   return (
     <section className="bg-white w-full min-h-screen">
       <Navbar />

@@ -14,10 +14,39 @@ const ContactForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Add form submission logic here (e.g., API call)
+    // console.log("Form submitted:", formData);
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/contact/submit`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+      } else {
+        alert(`Failed to send message: ${data.message}`);
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (
@@ -43,7 +72,7 @@ const ContactForm = () => {
                 placeholder="Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="input-field p-4 border rounded-lg bg-transparent"
+                className="input-field text-[#0D1216] p-4 border rounded-lg bg-transparent"
                 required
               />
               <input
@@ -52,7 +81,7 @@ const ContactForm = () => {
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="input-field p-4 border rounded-lg bg-transparent"
+                className="input-field text-[#0D1216] p-4 border rounded-lg bg-transparent"
                 required
               />
               <input
@@ -61,7 +90,7 @@ const ContactForm = () => {
                 placeholder="Phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="input-field p-4 border rounded-lg bg-transparent"
+                className="input-field text-[#0D1216] p-4 border rounded-lg bg-transparent"
               />
               <input
                 type="text"
@@ -69,7 +98,7 @@ const ContactForm = () => {
                 placeholder="Company"
                 value={formData.company}
                 onChange={handleChange}
-                className="input-field p-4 border rounded-lg bg-transparent"
+                className="input-field text-[#0D1216] p-4 border rounded-lg bg-transparent"
               />
             </div>
             <textarea
@@ -77,7 +106,7 @@ const ContactForm = () => {
               placeholder="Your message here..."
               value={formData.message}
               onChange={handleChange}
-              className="input-field h-28 w-full p-4 border rounded-lg bg-transparent"
+              className="input-field text-[#0D1216] h-28 w-full p-4 border rounded-lg bg-transparent"
               required
             />
             <button

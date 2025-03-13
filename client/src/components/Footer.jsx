@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import {
   FaFacebook,
   FaTwitter,
@@ -10,6 +11,43 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/newsletter/subscribe`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, consent: true }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe");
+      }
+
+      setSuccess("Successfully subscribed!");
+      setEmail(""); // Clear input field
+    } catch (error) {
+      setError("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <footer className="bg-[#e8f7fc]  py-12 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-5 md:grid-cols-4 gap-4">
@@ -18,14 +56,21 @@ export default function Footer() {
           <h3 className="text-xl text-[#0D1216] font-semibold mb-4">
             Subscribe to our newsletter
           </h3>
-          <div className="flex flex-col space-y-3">
+          <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
             <input
               type="email"
               placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg border-gray-500 text-[#0D1216] font-bold font-nunito bg-transparent"
             />
             <div className="flex items-center space-x-2 my-4">
-              <input type="checkbox" id="consent" className="w-4 h-4" />
+              <input
+                type="checkbox"
+                id="consent"
+                className="w-4 h-4"
+                required
+              />
               <label
                 htmlFor="consent"
                 className="text-[13px] text-[#0D1216] font-nunito"
@@ -34,10 +79,16 @@ export default function Footer() {
                 newsletter
               </label>
             </div>
-            <button className="bg-[#21B1E6] lg:w-1/3 px-6 py-4 rounded-full text-[#0D1216] font-bold hover:bg-blue-600 hover:text-white transition">
+            <button
+              type="submit"
+              className="bg-[#21B1E6] lg:w-1/3 px-6 py-4 rounded-full text-[#0D1216] font-bold hover:bg-blue-600 hover:text-white transition"
+            >
               Subscribe
             </button>
-          </div>
+          </form>
+
+          {error && <p className="text-red-600 mt-2">{error}</p>}
+          {success && <p className="text-green-600 mt-2">{success}</p>}
         </div>
 
         {/* Menu Links */}
