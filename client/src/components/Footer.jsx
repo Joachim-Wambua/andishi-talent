@@ -33,7 +33,7 @@ export default function Footer() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email, consent: true }),
+          body: JSON.stringify({ email, consent }),
         }
       );
 

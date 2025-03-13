@@ -39,13 +39,23 @@ export default function Navbar() {
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center space-x-16">
         <div className="flex items-center text-[16px] space-x-2">
-          <Link href="/" className="flex items-center hover:text-[#21B1E6] mx-8">
+          <Link
+            href="/"
+            className="flex items-center hover:text-[#21B1E6] mx-8"
+          >
             <RiHome2Line className="h-4 w-4 mx-1 mt-[2px]" />
             Home
           </Link>
-          <Link href="/courses" className="hover:text-[#21B1E6] mx-8">Courses</Link>
-          <Link href="/pricing" className="hover:text-[#21B1E6] mx-8">Pricing</Link>
-
+          <div className="mx-8">
+            <Link href="/courses" className="hover:text-[#21B1E6] mr-8">
+              Courses
+            </Link>
+          </div>
+          <div className="mx-8">
+            <Link href="/pricing" className="hover:text-[#21B1E6]">
+              Pricing
+            </Link>
+          </div>
           {/* About Dropdown */}
           <div className="relative">
             <button
@@ -57,8 +67,18 @@ export default function Navbar() {
             </button>
             {openDropdown === "about" && (
               <div className="absolute bg-white rounded-xl shadow-lg mt-2 py-2 w-40">
-                <Link href="/about" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]">About Us</Link>
-                <Link href="/careers" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]">Careers</Link>
+                <Link
+                  href="/about"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="/careers"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
+                >
+                  Careers
+                </Link>
               </div>
             )}
           </div>
@@ -82,13 +102,38 @@ export default function Navbar() {
                 </button>
                 {openSubDropdown === "knowledge-hub" && (
                   <div className="absolute left-full top-0 bg-white shadow-lg rounded-xl py-2 w-40">
-                    <Link href="/knowledge-hub/articles" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]">Articles</Link>
-                    <Link href="/knowledge-hub/webinars" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]">Webinars</Link>
-                    <Link href="/knowledge-hub/guides" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]">Guides</Link>
+                    <Link
+                      href="/knowledge-hub/articles"
+                      className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
+                    >
+                      Articles
+                    </Link>
+                    <Link
+                      href="/knowledge-hub/webinars"
+                      className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
+                    >
+                      Webinars
+                    </Link>
+                    <Link
+                      href="/knowledge-hub/guides"
+                      className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
+                    >
+                      Guides
+                    </Link>
                   </div>
                 )}
-                <Link href="/events" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]">Events</Link>
-                <Link href="/contact" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]">Contact Us</Link>
+                <Link
+                  href="/events"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
+                >
+                  Events
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
+                >
+                  Contact Us
+                </Link>
               </div>
             )}
           </div>
@@ -113,26 +158,69 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu Button */}
-      <button className="md:hidden text-2xl" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+      <button
+        className="md:hidden text-2xl"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
         {mobileMenuOpen ? <FiX /> : <FiMenu />}
       </button>
 
       {/* Mobile Sidebar Menu */}
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 w-2/3 h-full bg-white shadow-lg p-6 flex flex-col items-start space-y-6 z-50">
-          <button className="self-end text-2xl" onClick={() => setMobileMenuOpen(false)}>
+          <button
+            className="self-end text-2xl"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             <FiX />
           </button>
-          <Link href="/" className="text-lg font-medium hover:text-[#21B1E6]">Home</Link>
-          <Link href="/courses" className="text-lg font-medium hover:text-[#21B1E6]">Courses</Link>
-          <Link href="/pricing" className="text-lg font-medium hover:text-[#21B1E6]">Pricing</Link>
-          <Link href="/about" className="text-lg font-medium hover:text-[#21B1E6]">About</Link>
-          <Link href="/events" className="text-lg font-medium hover:text-[#21B1E6]">Events</Link>
-          <Link href="/contact" className="text-lg font-medium hover:text-[#21B1E6]">Contact Us</Link>
-          <Link href="/auth/login" className="text-lg font-medium text-blue-500 border border-blue-500 px-4 py-2 rounded-full hover:bg-[#21B1E6] hover:text-white">Sign In</Link>
-          <Link href="/application-form" className="text-lg font-medium bg-[#21B1E6] text-white px-4 py-2 rounded-full hover:bg-blue-800">Apply Now</Link>
+          <Link href="/" className="text-lg font-medium hover:text-[#21B1E6]">
+            Home
+          </Link>
+          <Link
+            href="/courses"
+            className="text-lg font-medium hover:text-[#21B1E6]"
+          >
+            Courses
+          </Link>
+          <Link
+            href="/pricing"
+            className="text-lg font-medium hover:text-[#21B1E6]"
+          >
+            Pricing
+          </Link>
+          <Link
+            href="/about"
+            className="text-lg font-medium hover:text-[#21B1E6]"
+          >
+            About
+          </Link>
+          <Link
+            href="/events"
+            className="text-lg font-medium hover:text-[#21B1E6]"
+          >
+            Events
+          </Link>
+          <Link
+            href="/contact"
+            className="text-lg font-medium hover:text-[#21B1E6]"
+          >
+            Contact Us
+          </Link>
+          <Link
+            href="/auth/login"
+            className="text-lg font-medium text-blue-500 border border-blue-500 px-4 py-2 rounded-full hover:bg-[#21B1E6] hover:text-white"
+          >
+            Sign In
+          </Link>
+          <Link
+            href="/application-form"
+            className="text-lg font-medium bg-[#21B1E6] text-white px-4 py-2 rounded-full hover:bg-blue-800"
+          >
+            Apply Now
+          </Link>
         </div>
       )}
-    </nav> 
+    </nav>
   );
 }
