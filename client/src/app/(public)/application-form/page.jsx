@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "../../components/Footer";
-import DarkNavbar from "../../components/DarkNavbar";
+import Footer from "../../../components/Footer";
+import DarkNavbar from "../../../components/DarkNavbar";
 import ApplicationForm from "./components/ApplicationForm";
 
 const ApplicationPage = () => {

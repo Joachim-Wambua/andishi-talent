@@ -1,9 +1,9 @@
 "use client";
 
-import Navbar from "../../components/Navbar";
-import Hero from "../../components/Hero";
+import Navbar from "../../../components/Navbar";
+import Hero from "../../../components/Hero";
 import MissionStatement from "./components/MissionStatement";
-import Footer from "../../components/Footer";
+import Footer from "../../../components/Footer";
 import CourseCarousel from "./components/CourseCarousel";
 import ValueProposition from "./components/ValueProposition";
 import TestimonialCarousel from "./components/TestimonialCarousel";

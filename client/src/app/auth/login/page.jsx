@@ -1,7 +1,65 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const LogIn = () => {
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  // Handle input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message || "Login failed");
+
+      console.log("Login successful:", data);
+      // Handle success: Redirect user or store token in state
+      localStorage.setItem("user", JSON.stringify(data.data.user)); // Store user data
+      setSuccess("Login successful!");
+      setFormData({
+        email: "",
+        password: "",
+      });
+      // Redirect based on role
+      window.location.href =
+        data.data.user.role === "admin"
+          ? "/dashboard/admin"
+          : "/dashboard/student";
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="flex min-h-screen items-center justify-center bg-gray-100 p-4">
       {/* Container */}
@@ -54,13 +112,23 @@ const LogIn = () => {
             </h2>
           </div>
 
-          <form className="mt-6 space-y-4 font-nunito">
+          {/* Success/Error Messages */}
+          {error && <p className="text-red-600 text-center">{error}</p>}
+          {success && <p className="text-green-600 text-center">{success}</p>}
+
+          <form className="mt-6 space-y-4 font-nunito" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-gray-700 text-[12px]">Login</label>
+              <label className="block text-gray-700 text-[12px]">
+                Email Address
+              </label>
               <input
                 type="email"
-                className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
-                placeholder="Email or Phone Number"
+                name="email"
+                className="w-full px-4 py-2 border text-black rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                placeholder="Enter Email Address"
+                onChange={handleChange}
+                value={formData.email}
+                required
               />
             </div>
             <div>
@@ -69,8 +137,12 @@ const LogIn = () => {
               </label>
               <input
                 type="password"
-                className="w-full px-4 py-2 border bg-[#E2E9EE] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                name="password"
+                className="w-full px-4 py-2 text-black border bg-[#E2E9EE] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
                 placeholder="Enter Password"
+                onChange={handleChange}
+                value={formData.password}
+                required
               />
             </div>
             <div className="flex items-center justify-between text-sm">
@@ -84,8 +156,12 @@ const LogIn = () => {
                 Forgot password?
               </a>
             </div>
-            <button className="w-full bg-[#21B1E6] hover:bg-blue-800 text-[#0D1216] hover:text-white font-bold text-[16px] px-8 py-4 rounded-full transition">
-              Sign In
+            <button
+              className="w-full bg-[#21B1E6] hover:bg-blue-800 text-[#0D1216] hover:text-white font-bold text-[16px] px-8 py-4 rounded-full transition"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Logging In..." : "Log In"}
             </button>
           </form>
 

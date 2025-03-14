@@ -1,14 +1,85 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const SignUp = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  // Handle Input Changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle Form Submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match!");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/register`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email,
+            phone: formData.phone,
+            password: formData.password,
+          }),
+        }
+      );
+
+      const data = await response.json();
+      console.log("Server Response: ", data);
+
+      if (!response.ok) {
+        throw new Error(
+          data.message || `Error ${response.status}: Something went wrong!`
+        );
+      }
+
+      setSuccess("Registration successful!");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        password: "",
+        confirmPassword: "",
+      });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="flex min-h-screen items-center justify-center bg-gray-100 p-4">
       {/* Container */}
       <div className="flex w-full max-w-4xl bg-white rounded-xl overflow-hidden">
         {/* Left Section */}
         <div className="hidden md:flex flex-col justify-center items-center w-1/2 bg-gradient-to-r from-[#21B1E6]  to-[#4CC1EB] p-10 text-white relative">
-          {/* Decoration Image */}
           <div className="absolute -bottom-10 -left-1 w-3/4 h-full flex justify-center items-center">
             <Image
               src="/decoration.png"
@@ -41,7 +112,7 @@ const SignUp = () => {
 
         {/* Right Section - Sign Up Form */}
         <div className="w-full md:w-1/2 p-10 ">
-          <div className="text-center ">
+          <div className="text-center">
             <Image
               src="/andishi-logo.png"
               alt="Andishi Logo"
@@ -54,7 +125,11 @@ const SignUp = () => {
             </h2>
           </div>
 
-          <form className="mt-6 space-y-4 font-nunito">
+          {/* Success/Error Messages */}
+          {error && <p className="text-red-600 text-center">{error}</p>}
+          {success && <p className="text-green-600 text-center">{success}</p>}
+
+          <form onSubmit={handleSubmit} className="mt-6 space-y-4 font-nunito">
             <div className="flex gap-4">
               <div className="flex-1">
                 <label className="block text-gray-700 text-[12px]">
@@ -62,8 +137,12 @@ const SignUp = () => {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border rounded-lg text-black bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
                   placeholder="Enter First Name"
+                  required
                 />
               </div>
               <div className="flex-1">
@@ -72,8 +151,12 @@ const SignUp = () => {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border rounded-lg text-black bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
                   placeholder="Enter Last Name"
+                  required
                 />
               </div>
             </div>
@@ -83,8 +166,12 @@ const SignUp = () => {
               </label>
               <input
                 type="email"
-                className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border rounded-lg text-black bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
                 placeholder="Enter Email"
+                required
               />
             </div>
             <div>
@@ -93,8 +180,12 @@ const SignUp = () => {
               </label>
               <input
                 type="tel"
-                className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border rounded-lg text-black bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
                 placeholder="Enter Phone Number"
+                required
               />
             </div>
             <div>
@@ -103,8 +194,12 @@ const SignUp = () => {
               </label>
               <input
                 type="password"
-                className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border text-black rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
                 placeholder="Create Password"
+                required
               />
             </div>
             <div>
@@ -113,25 +208,24 @@ const SignUp = () => {
               </label>
               <input
                 type="password"
-                className="w-full px-4 py-2 border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                className="w-full px-4 py-2 text-black border rounded-lg bg-[#E2E9EE] focus:outline-none focus:ring-2 focus:ring-[#21B1E6]"
                 placeholder="Confirm Password"
+                required
               />
             </div>
-            <button className="w-full bg-[#21B1E6] hover:bg-blue-800 text-[#0D1216] hover:text-white font-bold text-[16px] px-8 py-4 rounded-full transition">
-              Sign Up
+            <button
+              type="submit"
+              className="w-full bg-[#21B1E6] hover:bg-blue-800 text-[#0D1216] hover:text-white font-bold text-[16px] px-8 py-4 rounded-full transition"
+              disabled={loading}
+            >
+              {loading ? "Signing Up..." : "Sign Up"}
             </button>
           </form>
 
           <div className="mt-6 text-center border-t pt-4">
-            <button className="w-full flex items-center justify-center gap-2 bg-[#21B1E6] hover:bg-blue-800 text-[#0D1216] hover:text-white font-bold text-[16px] px-8 py-4 rounded-full transition">
-              <Image
-                src="/google-icon.png"
-                alt="Google"
-                width={20}
-                height={20}
-              />
-              <span className="font-nunito ">Sign up with Google</span>
-            </button>
             <p className="mt-4 text-[12px] text-[#0D1216]">
               Already have an account?{" "}
               <a href="/auth/login" className="font-semibold text-[#21B1E6]">

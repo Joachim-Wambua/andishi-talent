@@ -12,7 +12,6 @@ const authRoutes = require("./routes/auth");
 const applicationRoutes = require("./routes/application");
 const contactRoutes = require("./routes/contact");
 const newsletterRoutes = require("./routes/newsletter");
-
 const app = express();
 const port = process.env.PORT || 5000;
 
