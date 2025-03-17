@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { IoIosArrowDown } from "react-icons/io";
+import { motion } from "framer-motion";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { RiHome2Line } from "react-icons/ri";
 import { FaRegUser } from "react-icons/fa6";
 import { FiMenu, FiX } from "react-icons/fi"; // Hamburger and Close icons
@@ -12,13 +13,41 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isMoreDropdownOpen, setIsMoreDropdownOpen] = useState(false);
+  const [isKnowledgeHubDropdown, setIsKnowledgeHubDropdown] = useState(false);
+
+  const menuVariants = {
+    open: { rotate: 180, opacity: 1 },
+    closed: { rotate: 0, opacity: 1 },
+  };
 
   const handleDropdown = (menu) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
+    if (menu === "about") {
+      handleAboutDropdown();
+    } else if (menu === "more") {
+      handleMoreDropdown();
+    }
   };
 
   const handleSubDropdown = (menu) => {
     setOpenSubDropdown(openSubDropdown === menu ? null : menu);
+    if (menu === "knowledge-hub") {
+      setIsKnowledgeHubDropdown(!isKnowledgeHubDropdown);
+    }
+  };
+
+  const handleAboutDropdown = () => {
+    setIsAboutDropdownOpen(!isAboutDropdownOpen);
+  };
+
+  const handleMoreDropdown = () => {
+    setIsMoreDropdownOpen(!isMoreDropdownOpen);
+  };
+
+  const handleKnowledgeHubDropdown = () => {
+    setIsKnowledgeHubDropdown(!isKnowledgeHubDropdown);
   };
 
   return (
@@ -37,7 +66,7 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center space-x-16">
+      <div className="hidden md:flex items-center space-x-10">
         <div className="flex items-center text-[16px] space-x-2">
           <Link
             href="/"
@@ -62,8 +91,12 @@ export default function Navbar() {
               onClick={() => handleDropdown("about")}
               className="flex items-center text-black hover:text-[#21B1E6] mx-8"
             >
-              About
-              <IoIosArrowDown className="ml-1 mt-[2px]" />
+              About{" "}
+              {isAboutDropdownOpen ? (
+                <IoIosArrowUp className="ml-1 mt-[2px]" />
+              ) : (
+                <IoIosArrowDown className="ml-1 mt-[2px]" />
+              )}
             </button>
             {openDropdown === "about" && (
               <div className="absolute bg-white rounded-xl shadow-lg mt-2 py-2 w-40">
@@ -87,10 +120,14 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => handleDropdown("more")}
-              className="flex items-center text-black hover:text-[#21B1E6] mx-8"
+              className="flex items-center text-black hover:text-[#21B1E6] "
             >
               More
-              <IoIosArrowDown className="ml-1 mt-[2px]" />
+              {isMoreDropdownOpen ? (
+                <IoIosArrowUp className="ml-1 mt-[2px]" />
+              ) : (
+                <IoIosArrowDown className="ml-1 mt-[2px]" />
+              )}
             </button>
             {openDropdown === "more" && (
               <div className="absolute bg-white rounded-xl shadow-lg mt-2 py-2 w-48">
@@ -140,7 +177,7 @@ export default function Navbar() {
         </div>
 
         {/* Authentication Buttons */}
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 lg:text-lg sm:text-sm sm:whitespace-nowrap">
           <Link
             href="/auth/login"
             className="flex items-center border border-blue-500 text-blue-500 hover:bg-[#21B1E6] hover:bg-opacity-25 transition px-6 py-[6px] rounded-full"
@@ -162,12 +199,19 @@ export default function Navbar() {
         className="md:hidden text-2xl"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
-        {mobileMenuOpen ? <FiX /> : <FiMenu />}
+        <motion.div
+          initial="closed"
+          animate={mobileMenuOpen ? "open" : "closed"}
+          variants={menuVariants}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          {mobileMenuOpen ? <FiX /> : <FiMenu />}
+        </motion.div>
       </button>
 
       {/* Mobile Sidebar Menu */}
       {mobileMenuOpen && (
-        <div className="fixed top-0 left-0 w-2/3 h-full bg-white shadow-lg p-6 flex flex-col items-start space-y-6 z-50">
+        <div className="fixed inset-0 bg-white shadow-lg p-6 flex flex-col space-y-6 z-50 overflow-auto">
           <button
             className="self-end text-2xl"
             onClick={() => setMobileMenuOpen(false)}
@@ -189,12 +233,81 @@ export default function Navbar() {
           >
             Pricing
           </Link>
-          <Link
-            href="/about"
-            className="text-lg font-medium hover:text-[#21B1E6]"
+          <button
+            onClick={() => handleDropdown("about")}
+            className="flex justify-between items-center w-full font-medium text-lg hover:text-[#21B1E6]"
           >
-            About
-          </Link>
+            About{" "}
+            {isAboutDropdownOpen ? (
+              <IoIosArrowUp className="ml-1 mt-[2px]" />
+            ) : (
+              <IoIosArrowDown className="ml-1 mt-[2px]" />
+            )}
+          </button>
+          {openDropdown === "about" && (
+            <div className="pl-4 space-y-2">
+              <Link
+                href="/about"
+                className="block text-lg font-medium hover:text-[#21B1E6]"
+              >
+                About Us
+              </Link>
+              <Link
+                href="/careers"
+                className="block text-lg font-medium hover:text-[#21B1E6]"
+              >
+                Careers
+              </Link>
+            </div>
+          )}
+          <button
+            className="flex justify-between items-center font-medium w-full text-lg hover:text-[#21B1E6]"
+            onClick={() => handleDropdown("more")}
+          >
+            More{" "}
+            {isMoreDropdownOpen ? (
+              <IoIosArrowUp className="ml-1 mt-[2px]" />
+            ) : (
+              <IoIosArrowDown className="ml-1 mt-[2px]" />
+            )}
+          </button>
+          {openDropdown === "more" && (
+            <div className="pl-4 space-y-2">
+              <button
+                onClick={() => handleSubDropdown("knowledge-hub")}
+                className="flex justify-between items-center w-full font-medium px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
+              >
+                Knowledge Hub{" "}
+                {isKnowledgeHubDropdown ? (
+                  <IoIosArrowUp className="ml-1 mt-[2px]" />
+                ) : (
+                  <IoIosArrowDown className="ml-1 mt-[2px]" />
+                )}
+              </button>
+              {openSubDropdown === "knowledge-hub" && (
+                <div className="pl-4 space-y-2">
+                  <Link
+                    href="/knowledge-hub/articles"
+                    className="block px-4 py-2 hover:bg-gray-100 font-medium hover:text-[#21B1E6]"
+                  >
+                    Articles
+                  </Link>
+                  <Link
+                    href="/knowledge-hub/webinars"
+                    className="block px-4 py-2 hover:bg-gray-100 font-medium hover:text-[#21B1E6]"
+                  >
+                    Webinars
+                  </Link>
+                  <Link
+                    href="/knowledge-hub/guides"
+                    className="block px-4 py-2 font-medium hover:bg-gray-100 hover:text-[#21B1E6]"
+                  >
+                    Guides
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
           <Link
             href="/events"
             className="text-lg font-medium hover:text-[#21B1E6]"

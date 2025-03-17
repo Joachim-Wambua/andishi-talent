@@ -5,13 +5,19 @@ import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 
 export default function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(2);
+  const [visibleCards, setVisibleCards] = useState(3); // Default for large screens
   const totalCards = testimonials.length;
 
   // Adjust visible cards based on screen width
   useEffect(() => {
     const updateVisibleCards = () => {
-      setVisibleCards(window.innerWidth < 768 ? 1 : 2);
+      if (window.innerWidth < 640) {
+        setVisibleCards(1);
+      } else if (window.innerWidth < 1024) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(3);
+      }
     };
     updateVisibleCards();
     window.addEventListener("resize", updateVisibleCards);
@@ -37,19 +43,21 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <section className="w-full bg-white py-12">
+    <section className="w-full bg-white py-12 px-4">
       <div className="text-center">
-        <h2 className="text-4xl text-[#0D1216] font-semibold">What Our Students Say</h2>
-        <p className="text-[16px] text-[#314453] font-nunito my-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#0D1216] font-semibold">
+          What Our Students Say
+        </h2>
+        <p className="text-sm sm:text-base md:text-lg text-[#314453] font-nunito my-6">
           Hear from our graduates who have successfully transitioned into tech careers.
         </p>
       </div>
 
-      <div className="relative w-full max-w-5xl mx-auto bg-white py-4 overflow-hidden">
+      <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
         {/* ⬅️ Previous Button */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#21B1E6] text-white p-2 rounded-full shadow-md hover:bg-gray-300 z-10"
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#21B1E6] text-white p-3 rounded-full shadow-md hover:bg-gray-300 z-10"
         >
           <GoChevronLeft size={24} />
         </button>
@@ -57,12 +65,14 @@ export default function TestimonialCarousel() {
         {/* Testimonials Container */}
         <div
           className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * (100 / visibleCards)}%)` }}
+          style={{
+            transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
+          }}
         >
           {testimonials.map((item, index) => (
             <div
               key={item.id}
-              className="w-full sm:w-[calc(100%/2.15)] p-4 flex-shrink-0 transition-transform"
+              className={`w-full sm:w-[calc(100%/1.5)] md:w-[calc(100%/2)] p-4 flex-shrink-0`}
             >
               <div
                 className={`flex border rounded-lg items-center w-full shadow-md p-6 h-60 ${
@@ -75,9 +85,9 @@ export default function TestimonialCarousel() {
                   className="w-1/3 h-2/3 mx-auto rounded-full object-cover"
                 />
                 <div className="w-2/3 mx-2">
-                  <h3 className="text-lg font-bold mt-4">{item.name}</h3>
-                  <p className="text-sm font-nunito font-semibold">{item.role}</p>
-                  <p className="mt-2 font-nunito text-sm">{item.testimonial}</p>
+                  <h3 className="text-base sm:text-lg font-bold mt-2">{item.name}</h3>
+                  <p className="text-xs sm:text-sm font-nunito font-semibold">{item.role}</p>
+                  <p className="mt-2 font-nunito text-xs sm:text-sm">{item.testimonial}</p>
                 </div>
               </div>
             </div>
@@ -87,7 +97,7 @@ export default function TestimonialCarousel() {
         {/* ➡️ Next Button */}
         <button
           onClick={nextSlide}
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-[#21B1E6] p-2 rounded-full shadow-md hover:bg-gray-300 z-10"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#21B1E6] text-white p-3 rounded-full shadow-md hover:bg-gray-300 z-10"
         >
           <GoChevronRight size={24} />
         </button>

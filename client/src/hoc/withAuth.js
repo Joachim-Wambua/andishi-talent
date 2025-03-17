@@ -38,7 +38,7 @@ const withAuth = (WrappedComponent, allowedRoles) => {
 
     if (loading) return <p>Loading...</p>;
 
-    return <WrappedComponent {...props} />;
+    return <WrappedComponent {...props} user={user} />;
   };
 };
 

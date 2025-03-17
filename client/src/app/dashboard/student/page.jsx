@@ -1,12 +1,12 @@
-"use client"
+"use client";
 import React from "react";
 import withAuth from "@/hoc/withAuth";
 
-const StudentDashboard = () => {
+const StudentDashboard = ({ user }) => {
   return (
     <div>
-      <h1>Welcome, Student!</h1>
-      <p>Only students can see this page.</p>
+      <h1 className="font-bold text-black">Welcome, {user?.name.split(" ")[0]}!</h1>
+      <p className="text-sm text-black">Only students can see this page.</p>
     </div>
   );
 };
