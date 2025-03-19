@@ -248,13 +248,13 @@ export default function Navbar() {
             <div className="pl-4 space-y-2">
               <Link
                 href="/about"
-                className="block text-lg font-medium hover:text-[#21B1E6]"
+                className="flex justify-between items-center w-full font-medium px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
               >
                 About Us
               </Link>
               <Link
                 href="/careers"
-                className="block text-lg font-medium hover:text-[#21B1E6]"
+                className="flex justify-between items-center w-full font-medium px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
               >
                 Careers
               </Link>
@@ -306,20 +306,21 @@ export default function Navbar() {
                   </Link>
                 </div>
               )}
+              <Link
+                href="/events"
+                className="flex justify-between items-center w-full font-medium px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
+              >
+                Events
+              </Link>
+              <Link
+                href="/contact"
+                className="flex justify-between items-center w-full font-medium px-4 py-2 hover:bg-gray-100 hover:text-[#21B1E6]"
+              >
+                Contact Us
+              </Link>
             </div>
           )}
-          <Link
-            href="/events"
-            className="text-lg font-medium hover:text-[#21B1E6]"
-          >
-            Events
-          </Link>
-          <Link
-            href="/contact"
-            className="text-lg font-medium hover:text-[#21B1E6]"
-          >
-            Contact Us
-          </Link>
+
           <Link
             href="/auth/login"
             className="text-lg font-medium text-blue-500 border border-blue-500 px-4 py-2 rounded-full hover:bg-[#21B1E6] hover:text-white"

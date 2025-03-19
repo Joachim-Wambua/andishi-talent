@@ -3,25 +3,24 @@ import React from "react";
 const EventDetailHero = ({ imageURL, title, date, time }) => {
   return (
     <section
-      className="relative bg-cover bg-bottom h-[333px] flex items-center justify-center text-white"
+      className="relative bg-cover bg-center flex items-center justify-center text-white px-4"
       style={{
         backgroundImage: `url(${imageURL})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        height: "clamp(280px, 40vh, 450px)", // Adjusts dynamically based on viewport
       }}
     >
-      {/* Black overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      {/* Black overlay for better readability */}
+      <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Text content */}
-      <div className="relative text-center w-full z-10">
-        <div className="flex flex-col items-center justify-center ">
-          <h1 className="text-5xl secondary-text font-bold">{title}</h1>
-          <div className="flex flex-row items-center w-1/4 justify-center">
-            <p className="mt-4 w-full secondary-text font-medium text-[18px]">
-              {date} <span className="mx-6">|</span> {time}
-            </p>
-          </div>
+      <div className="relative text-center w-full max-w-screen-lg z-10">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">{title}</h1>
+        
+        {/* Date & Time */}
+        <div className="flex flex-wrap justify-center items-center mt-4 text-lg sm:text-xl font-medium">
+          <p className="text-white">{date}</p>
+          <span className="sm:inline mx-4">{" "} | </span>
+          <p className="text-white">{time}</p>
         </div>
       </div>
     </section>

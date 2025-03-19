@@ -15,13 +15,13 @@ const UpcomingEvents = () => {
           </h2>
 
           {/* Search & Filter Container */}
-          <div className="flex gap-4 mt-8 sm:mt-4">
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-0 w-full sm:w-auto">
             {/* Search Input */}
-            <div className="relative">
+            <div className="relative w-full sm:w-64">
               <input
                 type="text"
                 placeholder="Search Event"
-                className="border border-[#C2D0DB] rounded-full pl-10 pr-4 py-2 text-[15px] text-[#314453] focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
+                className="border border-[#C2D0DB] rounded-full pl-10 pr-4 py-2 text-[15px] text-[#314453] focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
               />
               <IoSearchSharp
                 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#55565A]"
@@ -30,7 +30,7 @@ const UpcomingEvents = () => {
             </div>
 
             {/* Filter Button */}
-            <button className="flex items-center gap-2 border border-[#C2D0DB] px-4 py-2 rounded-full text-[15px] text-[#314453] hover:bg-[#F3F4F6] transition">
+            <button className="flex items-center justify-center gap-2 border border-[#C2D0DB] px-4 py-2 rounded-full text-[15px] text-[#314453] hover:bg-[#F3F4F6] transition w-full sm:w-auto">
               <VscSettings fontSize={18} />
               Filter by Dates
             </button>
